@@ -9,7 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Guy extends Animal
 {
     public Guy (double maxH, double maxE, double armor, double speed) {
-        super(maxH, maxE, armor, speed);
+        this.curHealth = this.maxHealth = maxH;
+        this.curEnergy = this.maxEnergy = maxE;
+        this.armor = armor;
+        this.speed = speed;
+        
+        this.reproduceCooldown = 200;
+        this.poisonCooldown = 0;
+        
+        this.healthBar = new HealthBar((int)maxHealth, this);
+        this.energyBar = new EnergyBar((int)maxEnergy, this);
     }
     
     /**
