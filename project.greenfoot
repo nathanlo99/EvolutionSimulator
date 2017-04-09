@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sun Apr 09 17:13:59 EDT 2017
+#Sun Apr 09 18:11:14 EDT 2017
 target10.editor.width=900
 editor.fx.0.height=0
 target2.width=80
@@ -149,6 +149,7 @@ target3.editor.width=900
 dependency12.to=HealthBar
 target7.y=0
 target7.x=0
+class.Girl.image=woman01.png
 target2.editor.height=700
 dependency18.type=UsesDependency
 target11.typeParameters=
@@ -212,7 +213,9 @@ target4.type=ClassTarget
 target8.width=100
 dependency8.to=Projectile
 dependency19.type=UsesDependency
+simulation.speed=50
 target9.width=80
+class.Guy.image=man01.png
 target7.height=50
 dependency20.to=EnergyBar
 dependency5.type=UsesDependency
