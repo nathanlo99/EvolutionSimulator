@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=EvolutionWorld
+comment0.text=\n\ Write\ a\ description\ of\ class\ EvolutionWorld\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=EvolutionWorld()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ EvolutionWorld.\n\ \n
+comment2.params=a\ b
+comment2.target=float\ getDistance(greenfoot.Actor,\ greenfoot.Actor)
+comment2.text=\n\ Static\ method\ that\ gets\ the\ distance\ between\ the\ x,y\ coordinates\ of\ two\ Actors\n\ using\ Pythagorean\ Theorum.\n\ \n\ @param\ a\ \ \ \ \ First\ Actor\n\ @param\ b\ \ \ \ \ Second\ Actor\n\ @return\ float\n
+comment3.params=a
+comment3.target=void\ killAnimal(Animal)
+numComments=4

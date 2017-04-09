@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Plant
+comment0.text=\n\ Write\ a\ description\ of\ class\ Plant\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=int\ eaten()
+comment1.text=\n\ Call\ when\ plant\ is\ eaten\ by\ an\ animal,\ returns\ amount\ of\ food\ the\ plant\ gives.\n\ @return\ int\ amount\ of\ food\ the\ animal\ gets\ from\ eating\ this\ plant.\n
+comment2.params=
+comment2.target=void\ dead()
+comment2.text=\n\ Dont\ worry\ about\ this.\ Called\ when\ plant\ dies.\n
+comment3.params=
+comment3.target=void\ attack()
+comment3.text=\n\ Plant\ uses\ energy\ to\ attack\ nearest\ animal\n
+comment4.params=
+comment4.target=int[]\ attacked()
+comment4.text=\n\ Called\ when\ animal\ eats\ plant.\ Returns\ two\ numbers,\ damage\ per\ second\ and\ duration\ in\ seconds.\n\ Used\ by\ poison\ and\ thorns.\n
+numComments=5

@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=EnergyBar
+comment0.text=\n\ HealthBar\ generates\ and\ maintains\ a\ custom-sized\ image\ of\ a\ Health\ Bar\n\ in\ green\ and\ red\ (red\ being\ missing\ HP).\n\ \n\ Accepts\ any\ size\ -\ use\ Constants.\n\ \n\ NOT\ FINISHED\!\ Forgive\ my\ lack\ of\ commenting...\n\ \n\ @author\ Jordan\ Cohen\n\ @version\ 0.0.1\ (2012)\n
+comment1.params=
+comment1.target=EnergyBar()
+comment1.text=\n\ Main\ constructor\ -\ this\ is\ only\ called\ by\ the\ other\ Constructors\n\ and\ is\ not\ intended\ to\ be\ called\ directly.\n
+comment2.params=inMaxHP
+comment2.target=EnergyBar(int)
+comment2.text=\n\ Constructor\ that\ takes\ one\ int\ -\ for\ objects\ starting\ with\ max\ hit\ points.\n\ This\ will\ set\ both\ current\ and\ maximum\ hit\ points\ to\ the\ same\ value.\n
+comment3.params=inMaxHP\ target
+comment3.target=EnergyBar(int,\ greenfoot.Actor)
+comment3.text=\n\ Constructor\ takes\ an\ int\ for\ current\ and\ max\ hitpoints\ and\ also\ takes\ in\ an\n\ Actor,\ which\ this\ HP\ Bar\ will\ follow\ -\ Whenever\ the\ Actor\ moves,\ so\ will\ this\n\ hp\ bar.\ If\ the\ Actor\ is\ removed\ from\ the\ World,\ this\ HP\ bar\ will\ destroy\ itself.\n\ \n\ NOTE\:\ This\ is\ the\ Constructor\ used\ in\ the\ Bug\ simulation\n
+comment4.params=inMaxHP\ inCurrHP
+comment4.target=EnergyBar(int,\ int)
+comment4.text=\n\ Constructor\ that\ takes\ in\ a\ different\ value\ for\ current\ and\ max\ HP,\ ideal\ for\n\ when\ a\ new\ health\ bar\ is\ needed\ for\ an\ Actor\ that\ doesn't\ have\ full\ HP.\n
+comment5.params=w
+comment5.target=void\ addedToWorld(greenfoot.World)
+comment6.params=
+comment6.target=void\ act()
+comment6.text=\n\ Act\ -\ do\ whatever\ the\ HealthBar\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment7.params=newCurrHP
+comment7.target=void\ update(int)
+comment7.text=\n\ update\ Method\:\n\ \n\ Expects\ new\ current\ HP\n\ \n\ Returns\ true\ if\ HP\ has\ changed\ (needs\ an\ update)\n\ Returns\ false\ if\ HP\ has\ not\ changed\ (to\ avoid\ excessive\ processing)\n
+numComments=8
