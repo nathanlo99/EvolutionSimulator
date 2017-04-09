@@ -17,8 +17,8 @@ public class EvolutionWorld extends World
     public EvolutionWorld()
     {
         // Create a new world with 960x640 cells with a cell size of 1x1 pixels.
-        super(960, 640, 1,false );
-        setPaintOrder(HealthBar.class,EnergyBar.class,StabPlant.class,ShooterPlant.class,Projectile.class);
+        super(960, 640, 1, false);
+        setPaintOrder(HealthBar.class, EnergyBar.class, StabPlant.class, ShooterPlant.class, Projectile.class);
         StabPlant.setUp();
     }
 
