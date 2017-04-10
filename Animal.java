@@ -14,7 +14,7 @@ public abstract class Animal extends SmoothMover {
     protected HealthBar healthBar;
     protected EnergyBar energyBar;
     protected int time;
-    
+
     public static final double NO_ENERGY = 1;
     public static final int MUTATION_RATE = 10;
     public static final double REPRODUCE_THRESHOLD = 50.0;
@@ -67,8 +67,6 @@ public abstract class Animal extends SmoothMover {
         if (poisonCooldown == 0) poisonDamage = 0;
         if (reproduceCooldown != 0) reproduceCooldown--;
         if (curEnergy < 0) curHealth -= NO_ENERGY;
-        if (getX() < 0 || getX() >= getWorld().getWidth()) curHealth -= 100;
-        if (getY() < 0 || getY() >= getWorld().getHeight()) curHealth -= 100;
         if (curHealth < 0) die();
     }
 
@@ -76,6 +74,7 @@ public abstract class Animal extends SmoothMover {
         int food = p.eaten() * 10;
         if (curEnergy >= maxEnergy) curHealth = Math.min(curHealth + food, maxHealth);
         else curEnergy = Math.min(curEnergy + food, maxEnergy);
+        p.attacked(this);
     }
     
 
@@ -83,22 +82,22 @@ public abstract class Animal extends SmoothMover {
         ((EvolutionWorld)getWorld()).killAnimal(this);
     }
 
-    public void trueDamage(double d) {
-        curHealth -= d;
-    }
-    
     public void damage(double d) {
         curHealth -= d / armor;
     }
 
+    public void trueDamage(double d) {
+        curHealth -= d;
+    }
+
     public void reproduce() {
         curEnergy -= REPRODUCE_ENERGY;
-        reproduceCooldown = 1000;
+        reproduceCooldown = 100;
     }
 
     public void poison(double d, double t) {
         this.poisonCooldown += t;
-        this.poisonDamage += d;
+        this.poisonDamage = Math.max(d,poisonDamage);
     }
 
     public double getMaxHealth() { return maxHealth; }
@@ -109,5 +108,5 @@ public abstract class Animal extends SmoothMover {
 
     public double getSpeed() { return speed; }
 
-    public boolean canReproduce() { return time > 2000 && reproduceCooldown > 0; }
+    public boolean canReproduce() { return reproduceCooldown > 0; }
 }

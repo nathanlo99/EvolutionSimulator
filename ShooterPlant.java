@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class ShooterPlant extends Plant
 {
     private static final double bite=0.25;
-    private static final int dmg=3;
+    private static final int dmg=100;
     private Animal target;
     /**
      * Create a shooter plant
@@ -79,10 +79,7 @@ public class ShooterPlant extends Plant
         w.addObject(nrgBar, getX(), getY());
     }
 
-    public int[] attacked(){
-        int [] array = {0,0};
-        return array;
-    }
+    public void attacked(Animal animal){}
     
     public int eaten(){
         if(maxFood*bite>foodLeft){

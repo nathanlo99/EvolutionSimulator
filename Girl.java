@@ -9,26 +9,18 @@ import java.util.*;
  */
 public class Girl extends Animal
 {
-
+    private boolean eating=false;
+    private Animal child;
     public static final int MIN_HEALTH = 700, MAX_HEALTH = 1000;
     public static final int MIN_ENERGY = 400, MAX_ENERGY = 600;
     public static final int MIN_ARMOR = 0, MAX_ARMOR = 10;
-    public static final int MIN_SPEED = 1, MAX_SPEED = 2;
-    private boolean eating;
-    
-    public Girl() {
-        this.curHealth = this.maxHealth = Greenfoot.getRandomNumber(MAX_HEALTH - MIN_HEALTH) + MIN_HEALTH;
-        this.curEnergy = this.maxEnergy = Greenfoot.getRandomNumber(MAX_ENERGY - MIN_ENERGY) + MIN_ENERGY;
-        this.armor = Greenfoot.getRandomNumber(MAX_ARMOR - MIN_ARMOR) + MIN_ARMOR;
-        this.speed = Greenfoot.getRandomNumber(MAX_SPEED - MIN_SPEED) + MIN_SPEED;
-        
-        this.reproduceCooldown = 200;
-        this.poisonCooldown = 0;
+    public static final int MIN_SPEED = 1, MAX_SPEED = 5;
 
-        this.healthBar = new HealthBar((int)maxHealth, this);
-        this.energyBar = new EnergyBar((int)maxEnergy, this);
-        
-        this.eating = false;
+    public Girl() {
+        this(Greenfoot.getRandomNumber(MAX_HEALTH - MIN_HEALTH) + MIN_HEALTH,
+            Greenfoot.getRandomNumber(MAX_ENERGY - MIN_ENERGY) + MIN_ENERGY,
+            Greenfoot.getRandomNumber(MAX_ARMOR - MIN_ARMOR) + MIN_ARMOR,
+            Greenfoot.getRandomNumber(MAX_SPEED - MIN_SPEED) + MIN_SPEED);
     }
 
     public Girl(double maxH, double maxE, double armor, double speed) {
@@ -41,6 +33,7 @@ public class Girl extends Animal
 
         this.healthBar = new HealthBar((int)maxHealth, this);
         this.energyBar = new EnergyBar((int)maxEnergy, this);
+        child=null;
     }
 
     /**
@@ -49,14 +42,15 @@ public class Girl extends Animal
      */
     public void act() {
         List<Guy> guys = getWorld().getObjects(Guy.class);
-        if (guys.size() != 0 && curHealth >= REPRODUCE_THRESHOLD && curEnergy >= REPRODUCE_THRESHOLD) {
+        if (child==null&&guys.size() != 0 && curHealth >= REPRODUCE_THRESHOLD && curEnergy >= REPRODUCE_THRESHOLD) {
             if (guys.size() != 0) {
                 Guy target = guys.get(0);
                 turnTowards(target.getX(), target.getY());
             } 
             Guy guy = (Guy)getOneIntersectingObject(Guy.class);
             if (guy != null && guy.canReproduce()) {
-                getWorld().addObject(Animal.reproduce(this, guy), getX(), getY());
+                child=Animal.reproduce(this, guy);
+                getWorld().addObject(child, getX(), getY());
                 this.reproduce();
                 guy.reproduce();
             }
@@ -77,6 +71,7 @@ public class Girl extends Animal
             }
         }
         if (!eating) move(speed);
+        setRotation(getRotation()+2);
         time++;
         super.act();
     }    
