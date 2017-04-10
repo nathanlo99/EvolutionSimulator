@@ -54,6 +54,11 @@ public class Projectile extends SmoothMover
                 move(1);
             }
         }
+        Animal a = (Animal)getOneIntersectingObject(Animal.class);
+        if (a != null) {
+            a.damage(3);
+            getWorld().removeObject(this);
+        }
         if(getImage().getTransparency()<5) getWorld().removeObject(this);
     }
 }

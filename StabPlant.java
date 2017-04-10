@@ -133,6 +133,7 @@ public class StabPlant extends Plant
     }
 
     public void attack(){
+        
     }
 
     public int eaten(){

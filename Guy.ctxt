@@ -6,4 +6,6 @@ comment1.target=Guy(double,\ double,\ double,\ double)
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\n\ Act\ -\ do\ whatever\ the\ Guy\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-numComments=3
+comment3.params=
+comment3.target=void\ activateRage()
+numComments=4
