@@ -85,7 +85,7 @@ public abstract class Animal extends SmoothMover {
     
     public void reproduce() {
         curEnergy -= REPRODUCE_ENERGY;
-        reproduceCooldown = 100;
+        reproduceCooldown = 1000;
     }
     
     public void poison(double d, double t) {
@@ -97,5 +97,5 @@ public abstract class Animal extends SmoothMover {
     public double getMaxEnergy() { return maxEnergy; }
     public double getArmor() { return armor; }
     public double getSpeed() { return speed; }
-    public boolean canReproduce() { return reproduceCooldown > 0; }
+    public boolean canReproduce() { return reproduceCooldown == 0; }
 }

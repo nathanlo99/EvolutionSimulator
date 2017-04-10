@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class Girl extends Animal
 {
-    
+    private Animal child = null;
     public static final int MIN_HEALTH = 700, MAX_HEALTH = 1000;
     public static final int MIN_ENERGY = 400, MAX_ENERGY = 600;
     public static final int MIN_ARMOR = 0, MAX_ARMOR = 10;
@@ -54,9 +54,11 @@ public class Girl extends Animal
             }
             Guy guy = (Guy)getOneIntersectingObject(Guy.class);
             if (guy != null && guy.canReproduce()) {
-                getWorld().addObject(Animal.reproduce(this, guy), getX(), getY());
+                Animal newChild = Animal.reproduce(this, guy);
+                getWorld().addObject(newChild, getX(), getY());
                 this.reproduce();
                 guy.reproduce();
+                this.child = newChild;
             }
         } else {
             List<Plant> plants = getWorld().getObjects(Plant.class);
