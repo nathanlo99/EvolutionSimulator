@@ -13,7 +13,7 @@ public class EvolutionWorld extends World
      * Constructor for objects of class EvolutionWorld.
      * 
      */
-    public EvolutionWorld()
+    public EvolutionWorld() 
     {
         // Create a new world with 960x640 cells with a cell size of 1x1 pixels.
         super(960, 640, 1, false);

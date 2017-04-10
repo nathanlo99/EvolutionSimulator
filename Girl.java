@@ -13,19 +13,22 @@ public class Girl extends Animal
     public static final int MIN_HEALTH = 700, MAX_HEALTH = 1000;
     public static final int MIN_ENERGY = 400, MAX_ENERGY = 600;
     public static final int MIN_ARMOR = 0, MAX_ARMOR = 10;
-    public static final int MIN_SPEED = 1, MAX_SPEED = 5;
-
+    public static final int MIN_SPEED = 1, MAX_SPEED = 2;
+    private boolean eating;
+    
     public Girl() {
         this.curHealth = this.maxHealth = Greenfoot.getRandomNumber(MAX_HEALTH - MIN_HEALTH) + MIN_HEALTH;
         this.curEnergy = this.maxEnergy = Greenfoot.getRandomNumber(MAX_ENERGY - MIN_ENERGY) + MIN_ENERGY;
         this.armor = Greenfoot.getRandomNumber(MAX_ARMOR - MIN_ARMOR) + MIN_ARMOR;
         this.speed = Greenfoot.getRandomNumber(MAX_SPEED - MIN_SPEED) + MIN_SPEED;
-
+        
         this.reproduceCooldown = 200;
         this.poisonCooldown = 0;
 
         this.healthBar = new HealthBar((int)maxHealth, this);
         this.energyBar = new EnergyBar((int)maxEnergy, this);
+        
+        this.eating = false;
     }
 
     public Girl(double maxH, double maxE, double armor, double speed) {
@@ -45,13 +48,12 @@ public class Girl extends Animal
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
-        if (curEnergy >= REPRODUCE_THRESHOLD) {
-            List<Guy> guys = getObjectsInRange(200, Guy.class);
+        List<Guy> guys = getWorld().getObjects(Guy.class);
+        if (guys.size() != 0 && curHealth >= REPRODUCE_THRESHOLD && curEnergy >= REPRODUCE_THRESHOLD) {
             if (guys.size() != 0) {
                 Guy target = guys.get(0);
                 turnTowards(target.getX(), target.getY());
-                move(speed);
-            }
+            } 
             Guy guy = (Guy)getOneIntersectingObject(Guy.class);
             if (guy != null && guy.canReproduce()) {
                 getWorld().addObject(Animal.reproduce(this, guy), getX(), getY());
@@ -63,15 +65,18 @@ public class Girl extends Animal
             if (plants.size() != 0) {
                 Plant target = plants.get(0);
                 turnTowards(target.getX(), target.getY());
-                move(speed);
             }
             Plant p = (Plant)getOneIntersectingObject(Plant.class);
             if (p != null) {
-                if(time%50==0){
+                if(time % 50 == 0){
                     eat(p);
+                    eating = true;
                 }
-            }     
+            } else {
+                eating = false;
+            }
         }
+        if (!eating) move(speed);
         time++;
         super.act();
     }    

@@ -14,7 +14,7 @@ public abstract class Animal extends SmoothMover {
     protected HealthBar healthBar;
     protected EnergyBar energyBar;
     protected int time;
-
+    
     public static final double NO_ENERGY = 1;
     public static final int MUTATION_RATE = 10;
     public static final double REPRODUCE_THRESHOLD = 50.0;
@@ -63,10 +63,12 @@ public abstract class Animal extends SmoothMover {
         curEnergy -= ENERGY_PER_TICK;
         this.healthBar.update((int)curHealth);
         this.energyBar.update((int)curEnergy);
-        if (poisonCooldown % 50 == 0 && poisonCooldown != 0) damage(poisonDamage);
+        if (poisonCooldown % 50 == 0 && poisonCooldown != 0) trueDamage(poisonDamage);
         if (poisonCooldown == 0) poisonDamage = 0;
         if (reproduceCooldown != 0) reproduceCooldown--;
         if (curEnergy < 0) curHealth -= NO_ENERGY;
+        if (getX() < 0 || getX() >= getWorld().getWidth()) curHealth -= 100;
+        if (getY() < 0 || getY() >= getWorld().getHeight()) curHealth -= 100;
         if (curHealth < 0) die();
     }
 
@@ -81,13 +83,17 @@ public abstract class Animal extends SmoothMover {
         ((EvolutionWorld)getWorld()).killAnimal(this);
     }
 
+    public void trueDamage(double d) {
+        curHealth -= d;
+    }
+    
     public void damage(double d) {
         curHealth -= d / armor;
     }
 
     public void reproduce() {
         curEnergy -= REPRODUCE_ENERGY;
-        reproduceCooldown = 100;
+        reproduceCooldown = 1000;
     }
 
     public void poison(double d, double t) {
@@ -103,5 +109,5 @@ public abstract class Animal extends SmoothMover {
 
     public double getSpeed() { return speed; }
 
-    public boolean canReproduce() { return reproduceCooldown > 0; }
+    public boolean canReproduce() { return time > 2000 && reproduceCooldown > 0; }
 }
