@@ -1,12 +1,10 @@
 #BlueJ class context
-comment0.target=EvolutionWorld
-comment0.text=\n\ Write\ a\ description\ of\ class\ EvolutionWorld\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=EvolutionWorld()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ EvolutionWorld.\n\ \n
-comment2.params=a\ b
-comment2.target=float\ getDistance(greenfoot.Actor,\ greenfoot.Actor)
-comment2.text=\n\ Static\ method\ that\ gets\ the\ distance\ between\ the\ x,y\ coordinates\ of\ two\ Actors\n\ using\ Pythagorean\ Theorum.\n\ \n\ @param\ a\ \ \ \ \ First\ Actor\n\ @param\ b\ \ \ \ \ Second\ Actor\n\ @return\ float\n
-comment3.params=a
-comment3.target=void\ killAnimal(Animal)
-numComments=4
+comment0.params=
+comment0.target=EvolutionWorld()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ EvolutionWorld.\r\n\ \r\n
+comment1.params=a\ b
+comment1.target=float\ getDistance(greenfoot.Actor,\ greenfoot.Actor)
+comment1.text=\r\n\ Static\ method\ that\ gets\ the\ distance\ between\ the\ x,y\ coordinates\ of\ two\ Actors\r\n\ using\ Pythagorean\ Theorum.\r\n\ \r\n\ @param\ a\ \ \ \ \ First\ Actor\r\n\ @param\ b\ \ \ \ \ Second\ Actor\r\n\ @return\ float\r\n
+comment2.params=a
+comment2.target=void\ killAnimal(Animal)
+numComments=3

@@ -1,16 +1,14 @@
 #BlueJ class context
-comment0.target=PoisonPlant
-comment0.text=\n\ Write\ a\ description\ of\ class\ ThornPlant\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.params=
+comment0.target=PoisonPlant()
 comment1.params=
-comment1.target=PoisonPlant()
-comment2.params=
-comment2.target=void\ act()
-comment3.params=w
-comment3.target=void\ addedToWorld(greenfoot.World)
+comment1.target=void\ act()
+comment2.params=w
+comment2.target=void\ addedToWorld(greenfoot.World)
+comment3.params=
+comment3.target=int[]\ attacked()
 comment4.params=
-comment4.target=int[]\ attacked()
+comment4.target=int\ eaten()
 comment5.params=
-comment5.target=int\ eaten()
-comment6.params=
-comment6.target=void\ attack()
-numComments=7
+comment5.target=void\ attack()
+numComments=6

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class ShooterPlant extends Plant
 {
     private static final double bite=0.25;
-    private static final int dmg=3;
+    private static final int dmg=100;
     private Animal target;
     /**
      * Create a shooter plant

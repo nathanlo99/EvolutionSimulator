@@ -12,6 +12,7 @@ public class StabPlant extends Plant
     public static GreenfootImage[] stabAnimation;
     public static GreenfootImage base;
     private Animal target;
+    public static double bite = 0.05;
     public static void setUp(){
         stabAnimation=new GreenfootImage[41];
         for(int i = 0; i < 11; i++){
@@ -24,7 +25,7 @@ public class StabPlant extends Plant
     }
     private int stab;
     public StabPlant(){
-        damage=Greenfoot.getRandomNumber(5)+1;
+        damage=1000;
         foodLeft=1;
         maxFood=75;
         type=4;
@@ -37,7 +38,7 @@ public class StabPlant extends Plant
         hpBar=new HealthBar(maxFood,1,this);
         nrgBar=new EnergyBar(maxEnergy,this);
     }
-    
+
     public void addedToWorld(World w){
         w.addObject(hpBar,getX(),getY());
         w.addObject(nrgBar,getX(),getY());
@@ -70,7 +71,7 @@ public class StabPlant extends Plant
                     }
                 }
             }
-            if(energyLeft>=100&&target!=null&&EvolutionWorld.getDistance(this,target)<=64){
+            if(energyLeft>=100&&target!=null&&EvolutionWorld.getDistance(this,target)<=110){
                 int temp = getRotation();
                 turnTowards(target.getX(),target.getY());
                 int temp2 = getRotation();
@@ -83,30 +84,35 @@ public class StabPlant extends Plant
             }
         }
         else{
+            if(stab==10){
+                target.damage(damage);
+            }
             stab++;
         }
         if(stab>40){
             stab=0;
         }
-        if(target!=null&&target.getWorld()!=null&&EvolutionWorld.getDistance(this,target)<=200){
-            int temp = getRotation();
-            turnTowards(target.getX(),target.getY());
-            int temp2 = getRotation();
-            int dif = Math.abs(temp2-temp);
-            if(temp!=temp2){
-                if(dif<180){
-                    if(temp2>temp){
-                        setRotation(temp+1);
-                    }
-                    else if(temp2<temp){
-                        setRotation(temp-1);
-                    }
-                }else{
-                    if(temp2<temp-180){
-                        setRotation(temp+1);
-                    }
-                    else if(temp2>temp-180){
-                        setRotation(temp-1);
+        if(target!=null&&target.getWorld()!=null&&EvolutionWorld.getDistance(this,target)<=75000){
+            for(int i = 0; i < 2; i++){
+                int temp = getRotation();
+                turnTowards(target.getX(),target.getY());
+                int temp2 = getRotation();
+                int dif = Math.abs(temp2-temp);
+                if(temp!=temp2){
+                    if(dif<180){
+                        if(temp2>temp){
+                            setRotation(temp+1);
+                        }
+                        else if(temp2<temp){
+                            setRotation(temp-1);
+                        }
+                    }else{
+                        if(temp2<temp-180){
+                            setRotation(temp+1);
+                        }
+                        else if(temp2>temp-180){
+                            setRotation(temp-1);
+                        }
                     }
                 }
             }
@@ -133,10 +139,15 @@ public class StabPlant extends Plant
     }
 
     public void attack(){
-        
+
     }
 
     public int eaten(){
-        return 0;
+        if(maxFood*bite>foodLeft){
+            foodLeft=0;
+            return foodLeft;
+        }
+        foodLeft-=(int)(maxFood*bite);
+        return (int)(maxFood*bite);
     }
 }

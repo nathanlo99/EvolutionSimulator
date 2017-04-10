@@ -8,6 +8,10 @@ import java.util.*;
  */
 public class Guy extends Animal
 {
+    public static final int MIN_HEALTH = 700, MAX_HEALTH = 1000;
+    public static final int MIN_ENERGY = 400, MAX_ENERGY = 600;
+    public static final int MIN_ARMOR = 1, MAX_ARMOR = 10;
+    public static final int MIN_SPEED = 1, MAX_SPEED = 5;
     
     private boolean rageMode = false;
     private boolean ifEat = false;
@@ -15,6 +19,13 @@ public class Guy extends Animal
     private int timeInterval = 30;
     private GreenfootImage ragePic = new GreenfootImage("2.png");
     private double default_speed;
+
+    public Guy() {
+        this(Greenfoot.getRandomNumber(MAX_HEALTH - MIN_HEALTH) + MIN_HEALTH,
+            Greenfoot.getRandomNumber(MAX_ENERGY - MIN_ENERGY) + MIN_ENERGY,
+            Greenfoot.getRandomNumber(MAX_ARMOR - MIN_ARMOR) + MIN_ARMOR,
+            Greenfoot.getRandomNumber(MAX_SPEED - MIN_SPEED) + MIN_SPEED);
+    }
     public Guy (double maxH, double maxE, double armor, double speed) {
         this.curHealth = this.maxHealth = maxH;
         this.curEnergy = this.maxEnergy = maxE;
