@@ -19,7 +19,7 @@ public class ThornPlant extends Plant{
         type = 2;
         foodLeft = 1;
         energyLeft = maxEnergy;
-        damage = 2;
+        damage = 500;
         duration = 1;
         hpBar=new HealthBar(maxFood,1,this);
         nrgBar=new EnergyBar(maxEnergy,this);
@@ -59,9 +59,8 @@ public class ThornPlant extends Plant{
      * @return int  Amount of damage dealt.
      */
     
-    public int[] attacked() {
-        int [] array = {damage, duration};
-        return array;
+    public void attacked(Animal animal) {
+        animal.damage(damage);
     }
     /**
      * 
@@ -73,10 +72,6 @@ public class ThornPlant extends Plant{
         }
         foodLeft-=(int)(maxFood*bite);
         return (int)(maxFood*bite);
-    }
-    
-    public void attacked(Animal animal){
-        animal.damage(damage);
     }
     
     /**

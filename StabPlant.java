@@ -133,14 +133,9 @@ public class StabPlant extends Plant
         }
     }
 
-    public int[] attacked(){
-        int[] array={0,0};
-        return array;
-    }
+    public void attacked(Animal animal){}
 
-    public void attack(){
-
-    }
+    public void attack(){}
 
     public int eaten(){
         if(maxFood*bite>foodLeft){

@@ -79,10 +79,7 @@ public class ShooterPlant extends Plant
         w.addObject(nrgBar, getX(), getY());
     }
 
-    public int[] attacked(){
-        int [] array = {0,0};
-        return array;
-    }
+    public void attacked(Animal animal){}
     
     public int eaten(){
         if(maxFood*bite>foodLeft){

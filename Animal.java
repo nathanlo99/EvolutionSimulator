@@ -63,7 +63,7 @@ public abstract class Animal extends SmoothMover {
         curEnergy -= ENERGY_PER_TICK;
         this.healthBar.update((int)curHealth);
         this.energyBar.update((int)curEnergy);
-        if (poisonCooldown % 50 == 0 && poisonCooldown != 0) damage(poisonDamage);
+        if (poisonCooldown % 50 == 0 && poisonCooldown != 0) trueDamage(poisonDamage);
         if (poisonCooldown == 0) poisonDamage = 0;
         if (reproduceCooldown != 0) reproduceCooldown--;
         if (curEnergy < 0) curHealth -= NO_ENERGY;
@@ -74,6 +74,7 @@ public abstract class Animal extends SmoothMover {
         int food = p.eaten() * 10;
         if (curEnergy >= maxEnergy) curHealth = Math.min(curHealth + food, maxHealth);
         else curEnergy = Math.min(curEnergy + food, maxEnergy);
+        p.attacked(this);
     }
     
 
@@ -83,6 +84,10 @@ public abstract class Animal extends SmoothMover {
 
     public void damage(double d) {
         curHealth -= d / armor;
+    }
+
+    public void trueDamage(double d) {
+        curHealth -= d;
     }
 
     public void reproduce() {

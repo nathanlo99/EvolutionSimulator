@@ -60,5 +60,5 @@ public abstract class Plant extends SmoothMover
      * Called when animal eats plant. Returns two numbers, damage per second and duration in seconds.
      * Used by poison and thorns.
      */
-    abstract int[] attacked();
+    abstract void attacked(Animal animal);
 }
