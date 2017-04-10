@@ -71,7 +71,7 @@ public class Girl extends Animal
             }
         }
         if (!eating) move(speed);
-        setRotation(getRotation()+2);
+        setRotation(getRotation()+Greenfoot.getRandomNumber(5)-2);
         time++;
         super.act();
     }    
