@@ -1,7 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * 
+ * An actor that gives a poisoned effect to any animal that attacks it. It will grow, then decay once spawned on the world. 
+ * Its health will be decrease when attacked, and it will die faster. 
+ * The poison effect is different for each instance of the actor, as it is randomly generated. However, the poison value is constant for every instance. 
+ *
  * @author Jerry Liu
  * @version Apr 2017
  */
