@@ -21,7 +21,7 @@ public class PoisonPlant extends Plant
         type = 3;
         foodLeft = 1;
         energyLeft = maxEnergy;
-        damage = Greenfoot.getRandomNumber(4)+1; damage*=10;
+        damage = Greenfoot.getRandomNumber(4)+1; damage*=50;
         duration = Greenfoot.getRandomNumber(9)+1;
         hpBar=new HealthBar(maxFood,1,this);
         nrgBar=new EnergyBar(maxEnergy,this);

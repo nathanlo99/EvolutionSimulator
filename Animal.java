@@ -97,7 +97,7 @@ public abstract class Animal extends SmoothMover {
 
     public void poison(double d, double t) {
         this.poisonCooldown += t;
-        this.poisonDamage += d;
+        this.poisonDamage = Math.max(d,poisonDamage);
     }
 
     public double getMaxHealth() { return maxHealth; }
