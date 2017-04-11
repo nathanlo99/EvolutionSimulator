@@ -43,4 +43,37 @@ public class EvolutionWorld extends World
         // TODO gather statistics?
         removeObject(a);
     }
+    
+    /**
+     * Spawns a given actor at a random spot within the world. 
+     * 
+     * @param a     The actor being added to the world.
+     */
+    
+    public void spawnRandomSpot(Actor a){
+        int x = getWidth();
+        int y = getHeight();
+        addObject(a,Greenfoot.getRandomNumber(x),Greenfoot.getRandomNumber(y));
+    }
+    
+    /**
+     * spawns 1-10 subclasses of Plant and 1-10 subclasses of Animal. Each plant/animal is randomly spawned in. 
+     */
+    
+    public void spawnRandom(){
+        int plantSpawn[] = new int [Greenfoot.getRandomNumber(9)+1];
+        int animalSpawn[] = new int [Greenfoot.getRandomNumber(9)+1];
+        for (int i = 0;i<plantSpawn.length;i++){
+            int plantType = Greenfoot.getRandomNumber(4);
+            if(plantType==0)spawnRandomSpot(new StabPlant());
+            else if(plantType==1)spawnRandomSpot(new PoisonPlant());
+            else if(plantType==2)spawnRandomSpot(new ThornPlant());
+            else if(plantType==3)spawnRandomSpot(new ShooterPlant());
+        }
+        for (int i = 0;i<animalSpawn.length;i++){
+            int animalType = Greenfoot.getRandomNumber(2);
+            if(animalType==0)spawnRandomSpot(new Guy());
+            else if(animalType==1)spawnRandomSpot(new Girl());
+        }
+    
 }
