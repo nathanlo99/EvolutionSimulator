@@ -75,5 +75,5 @@ public class EvolutionWorld extends World
             if(animalType==0)spawnRandomSpot(new Guy());
             else if(animalType==1)spawnRandomSpot(new Girl());
         }
-    
+    }
 }
