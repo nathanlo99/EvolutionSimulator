@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class EvolutionWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jerry Liu
+ * @version Apr 2017
  */
 public class EvolutionWorld extends World
 {
@@ -20,9 +20,6 @@ public class EvolutionWorld extends World
         setPaintOrder(HealthBar.class, EnergyBar.class, StabPlant.class, ShooterPlant.class, Projectile.class);
         StabPlant.setUp();
         
-        for (int i = 0; i < 10; i++) {
-            
-        }
     }
 
     /**
