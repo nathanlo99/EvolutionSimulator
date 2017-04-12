@@ -8,6 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class DeadAnimal extends Actor
 {
+    public DeadAnimal(){
+        Greenfoot.playSound("roar"+(Greenfoot.getRandomNumber(3))+".wav");
+    }
     /**
      * Act - do whatever the DeadAnimal wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

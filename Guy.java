@@ -56,7 +56,7 @@ public class Guy extends Animal
             move(speed);
         }
         Plant p = (Plant)getOneIntersectingObject(Plant.class);
-        if(bite==3){ activateRage(); rageMode=true;}
+        if(bite==3&&!rageMode){ activateRage(); rageMode=true;}
         if (p != null) {
             if(time%timeInterval==0){
                 eat(p);
@@ -77,6 +77,7 @@ public class Guy extends Animal
         
     }
     private void activateRage(){
+        Greenfoot.playSound("laugh"+(Greenfoot.getRandomNumber(5))+".wav");
         speed = speed*2;
         timeInterval = 18;
         setImage(ragePic);
