@@ -99,7 +99,7 @@ public class EvolutionWorld extends World
         score.update(0,animals);
         score.update(1,plants);
         score.updateText();
-        if (animals == 0 && plants == 0) {
+        if (animals == 0 || plants == 0) {
             spawnRandom();
         }
     }
