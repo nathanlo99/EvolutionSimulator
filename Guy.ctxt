@@ -1,11 +1,13 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Guy()
-comment1.params=maxH\ maxE\ armor\ speed
-comment1.target=Guy(double,\ double,\ double,\ double)
-comment2.params=
-comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Guy\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.target=Guy
+comment0.text=\n\ Write\ a\ description\ of\ class\ Guy\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Guy()
+comment2.params=maxH\ maxE\ armor\ speed
+comment2.target=Guy(double,\ double,\ double,\ double)
 comment3.params=
-comment3.target=void\ activateRage()
-numComments=4
+comment3.target=void\ act()
+comment3.text=\n\ Act\ -\ do\ whatever\ the\ Guy\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment4.params=
+comment4.target=void\ activateRage()
+numComments=5
