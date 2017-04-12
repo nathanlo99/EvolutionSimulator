@@ -10,7 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Joey Ma:
  *  - Score bar (with his Widget)
  * Nathan Lo:
- *  - asdfasdadsfad
+ *  - Changed the random spawning 
  * Eric Sun:
  *  - asdflkjasfsadk
  * @version Apr 2017
