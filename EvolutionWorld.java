@@ -4,6 +4,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Write a description of class EvolutionWorld here.
  * 
  * @author Jerry Liu
+ * 
+ * Jerry Liu:
+ *  - Random spawn thing
+ * Joey Ma:
+ *  - Score bar (with his Widget)
+ * Nathan Lo:
+ *  - asdfasdadsfad
+ * Eric Sun:
+ *  - asdflkjasfsadk
  * @version Apr 2017
  */
 public class EvolutionWorld extends World
@@ -90,6 +99,9 @@ public class EvolutionWorld extends World
         score.update(0,animals);
         score.update(1,plants);
         score.updateText();
+        if (animals == 0 && plants == 0) {
+            spawnRandom();
+        }
     }
 
     public void newAnimal(){
@@ -101,6 +113,7 @@ public class EvolutionWorld extends World
     }
 
     public void killPlant(){
-        plants=Math.max(0,--plants);
+        plants--;
+        if (plants < 0) System.err.println("Hm weird...");
     }
 }

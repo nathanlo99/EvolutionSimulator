@@ -78,6 +78,7 @@ public abstract class Animal extends SmoothMover {
     
 
     public void die() {
+        getWorld().addObject(new DeadAnimal(), getX(), getY());
         ((EvolutionWorld)getWorld()).killAnimal(this);
     }
 
@@ -100,12 +101,8 @@ public abstract class Animal extends SmoothMover {
     }
 
     public double getMaxHealth() { return maxHealth; }
-
     public double getMaxEnergy() { return maxEnergy; }
-
     public double getArmor() { return armor; }
-
     public double getSpeed() { return speed; }
-
     public boolean canReproduce() { return reproduceCooldown > 0; }
 }
