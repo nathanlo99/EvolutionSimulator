@@ -12,7 +12,7 @@ public class StabPlant extends Plant
     public static GreenfootImage[] stabAnimation;
     public static GreenfootImage base;
     private Animal target;
-    public static double bite = 0.05;
+    public static double bite = 0.15;
     public static void setUp(){
         stabAnimation=new GreenfootImage[41];
         for(int i = 0; i < 11; i++){

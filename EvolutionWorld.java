@@ -8,7 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EvolutionWorld extends World
 {
-
+    private ScoreBar score;
+    private int animals;
+    private int plants;
     /**
      * Constructor for objects of class EvolutionWorld.
      * 
@@ -17,9 +19,14 @@ public class EvolutionWorld extends World
     {
         // Create a new world with 960x640 cells with a cell size of 1x1 pixels.
         super(960, 640, 1, false);
-        setPaintOrder(HealthBar.class, EnergyBar.class, StabPlant.class, ShooterPlant.class, Projectile.class);
+        setPaintOrder(ScoreBar.class,HealthBar.class, EnergyBar.class, StabPlant.class, ShooterPlant.class, Projectile.class);
         StabPlant.setUp();
-        
+        score=new ScoreBar("Animals Alive: %i:3%   Plants Alive: %i:3%");
+        addObject(score,960/2,15);
+        animals=0;
+        plants=0;
+        spawnRandom();
+        score.updateText();
     }
 
     /**
@@ -38,42 +45,62 @@ public class EvolutionWorld extends World
         distance = Math.sqrt(Math.pow(xLength, 2) + Math.pow(yLength, 2));
         return (float)distance;
     }
-    
+
     public void killAnimal(Animal a) {
-        // TODO gather statistics?
+        animals=Math.max(0,animals-1);
         removeObject(a);
     }
-    
+
     /**
      * Spawns a given actor at a random spot within the world. 
      * 
      * @param a     The actor being added to the world.
      */
-    
+
     public void spawnRandomSpot(Actor a){
         int x = getWidth();
-        int y = getHeight();
-        addObject(a,Greenfoot.getRandomNumber(x),Greenfoot.getRandomNumber(y));
+        int y = getHeight()-40;
+        addObject(a,Greenfoot.getRandomNumber(x),Greenfoot.getRandomNumber(y)+40);
     }
-    
+
     /**
      * spawns 1-10 subclasses of Plant and 1-10 subclasses of Animal. Each plant/animal is randomly spawned in. 
      */
-    
+
     public void spawnRandom(){
-        int plantSpawn[] = new int [Greenfoot.getRandomNumber(9)+1];
-        int animalSpawn[] = new int [Greenfoot.getRandomNumber(9)+1];
-        for (int i = 0;i<plantSpawn.length;i++){
+        for (int i = 0;i<Greenfoot.getRandomNumber(10)+5;i++){
             int plantType = Greenfoot.getRandomNumber(4);
             if(plantType==0)spawnRandomSpot(new StabPlant());
             else if(plantType==1)spawnRandomSpot(new PoisonPlant());
             else if(plantType==2)spawnRandomSpot(new ThornPlant());
             else if(plantType==3)spawnRandomSpot(new ShooterPlant());
+            plants++;
         }
-        for (int i = 0;i<animalSpawn.length;i++){
+        for (int i = 0;i<Greenfoot.getRandomNumber(5)+2;i++){
             int animalType = Greenfoot.getRandomNumber(2);
             if(animalType==0)spawnRandomSpot(new Guy());
             else if(animalType==1)spawnRandomSpot(new Girl());
+            animals++;
         }
+        score.update(0,animals);
+        score.update(1,plants);
+    }
+    
+    public void act(){
+        score.update(0,animals);
+        score.update(1,plants);
+        score.updateText();
+    }
+
+    public void newAnimal(){
+        animals++;
+    }
+
+    public void newPlant(){
+        plants++;
+    }
+
+    public void killPlant(){
+        plants=Math.max(0,--plants);
     }
 }

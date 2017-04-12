@@ -27,7 +27,7 @@ public abstract class Animal extends SmoothMover {
         w.addObject(this.energyBar, getX(), getY());
     }
 
-    static Animal reproduce (Animal first, Animal second) { // When reproducing
+    public static Animal reproduce (Animal first, Animal second) { // When reproducing
         double maxH = first.getMaxHealth();
         double maxE = first.getMaxEnergy();
         double armor = first.getArmor();
@@ -46,7 +46,6 @@ public abstract class Animal extends SmoothMover {
         if (Greenfoot.getRandomNumber(MUTATION_RATE) == 1) maxE--;
         if (Greenfoot.getRandomNumber(MUTATION_RATE) == 1) armor--;
         if (Greenfoot.getRandomNumber(MUTATION_RATE) == 1) speed--;
-
         if (Greenfoot.getRandomNumber(2) == 1) {
             return new Girl(maxH, maxE, armor, speed);
         } else {
@@ -72,8 +71,8 @@ public abstract class Animal extends SmoothMover {
 
     public void eat(Plant p) {
         int food = p.eaten() * 10;
-        if (curEnergy >= maxEnergy) curHealth = Math.min(curHealth + food, maxHealth);
-        else curEnergy = Math.min(curEnergy + food, maxEnergy);
+        if(curHealth>=maxHealth) curEnergy = Math.min(curEnergy+food,maxEnergy);
+        else curHealth = Math.min(curHealth + food, maxHealth);
         p.attacked(this);
     }
     

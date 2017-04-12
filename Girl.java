@@ -53,6 +53,7 @@ public class Girl extends Animal
                 getWorld().addObject(child, getX(), getY());
                 this.reproduce();
                 guy.reproduce();
+                ((EvolutionWorld)getWorld()).newAnimal();
             }
         } else {
             List<Plant> plants = getWorld().getObjects(Plant.class);

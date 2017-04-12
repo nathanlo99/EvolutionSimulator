@@ -48,6 +48,7 @@ public abstract class Plant extends SmoothMover
      * Dont worry about this. Called when plant dies.
      */
     public void dead(){
+        ((EvolutionWorld)getWorld()).killPlant();
         getWorld().removeObject(this);
     }
     
