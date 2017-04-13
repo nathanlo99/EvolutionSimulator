@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=PoisonPlant
+comment0.text=\n\ Write\ a\ description\ of\ class\ ThornPlant\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=PoisonPlant()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=w
+comment3.target=void\ addedToWorld(greenfoot.World)
+comment4.params=animal
+comment4.target=void\ attacked(Animal)
+comment5.params=
+comment5.target=int\ eaten()
+comment6.params=
+comment6.target=void\ attack()
+numComments=7

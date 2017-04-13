@@ -1,0 +1,34 @@
+#BlueJ class context
+comment0.target=ScoreBar
+comment0.text=\n\ A\ completely\ modular\ and\ reusable\ score\ bar\ with\ the\ color\ and\ text\ format\ losely\ based\ off\ the\ code\ by\ Jordan\ Cohen.<br\ /><br\ />\n\ <b>Format</b><br\ />\n\ The\ text\ should\ be\ formatted\ in\ a\ special\ way.\ Literal\ characters\ should\ be\ left\ as\ is,\ but\ anywhere\ where\ a\ variable\ will\ be\ placed,\ put\ two\ percentage\ signs\ (%)\n\ with\ the\ variable\ type,\ and\ format\ keys.\n\ @author\ Joey\ Ma\n\ @version\ March\ 2017\n
+comment1.params=width\ format
+comment1.target=ScoreBar(int,\ java.lang.String)
+comment1.text=\n\ Construct\ a\ ScoreBar\ object\ with\ the\ set\ width\ and\ format.\n\ If\ width\ is\ set\ to\ 0,\ the\ ScoreBar\ will\ automatically\ grab\ the\ size\ of\ the\ world\ as\ it's\ width.\n\ @param\ width\ A\ single\ integer\ for\ the\ width\ of\ the\ scoreboard\n\ @param\ format\ a\ single\ string\ for\ the\ format\ of\ the\ scoreboard\n\ @see\ format\n
+comment10.params=number
+comment10.target=int\ digitCounter(int)
+comment10.text=\n\ Useful\ private\ method\ that\ counts\ the\ digit\ in\ any\ integer.\n\ \n\ Ripped\ from\ Mr.\ Cohen\n\ @param\ number\ \ \ \ The\ number\ whose\ digits\ you\ want\ to\ count\n\ @return\ \ int\ \ \ \ \ The\ number\ of\ digits\ in\ the\ given\ number\n
+comment2.params=width\ format\ text\ bg
+comment2.target=ScoreBar(int,\ java.lang.String,\ java.awt.Color,\ java.awt.Color)
+comment2.text=\n\ Construct\ a\ ScoreBar\ with\ set\ width,\ format,\ text\ color\ and\ background\ color.\n\ If\ width\ is\ set\ to\ 0,\ the\ ScoreBar\ will\ automatically\ grab\ the\ size\ of\ the\ world\ as\ it's\ width.\n\ @param\ width\ A\ single\ integer\ for\ the\ width\ of\ the\ scoreboard\n\ @param\ format\ a\ single\ string\ for\ the\ format\ of\ the\ scoreboard\n\ @param\ text\ color\ of\ the\ text\n\ @param\ bg\ color\ of\ the\ background\n\ @see\ format\n
+comment3.params=format
+comment3.target=ScoreBar(java.lang.String)
+comment3.text=\n\ Construct\ a\ ScoreBar\ with\ the\ set\ format.\ The\ width\ will\ automagically\ be\ set\ to\ the\ width\ of\ the\ world.\n\ @param\ format\ a\ single\ string\ for\ the\ format\ of\ the\ scoreboard\n\ @see\ format\n
+comment4.params=world
+comment4.target=void\ addedToWorld(greenfoot.World)
+comment4.text=\n\ When\ the\ ScoreBar\ is\ added\ to\ the\ world\ and\ the\ width\ is\ 0,\ automagically\ set\ it\ to\ the\ width\ of\ the\ world.<br\ />\n\ The\ string\ is\ then\ reformatted\ to\ fit\ the\ code's\ tastes,\ and\ the\ array\ is\ flooded\ by\ nulls.\n
+comment5.params=pos\ element
+comment5.target=void\ update(int,\ java.lang.Object)
+comment5.text=\n\ Set\ the\ element\ at\ a\ position\ to\ a\ different\ element.<br\ />\n\ (Named\ update\ instead\ of\ set\ because\ I\ put\ way\ too\ many\ updates\ in\ the\ world\ and\ I\ don't\ feel\ like\ ctrl+f-ing\ for\ them)<br\ />\n\ (IF\ YOU\ ARE\ PUTTING\ A\ DOUBLE\ PLEASE\ FOR\ THE\ LOVE\ OF\ OUR\ LORD\ AND\ SAVIOUR\ JESUS\ CHRIST\ DO\ NOT\ PUT\ A\ INTEGER\ LIKE\ 4\ PLEASE\ PUT\ 4.0\ OR\ A\ DOUBLE)\n\ @param\ pos\ the\ index\ (0-based)\ of\ the\ element\ to\ be\ updated\n\ @param\ element\ the\ element\ to\ replace\ the\ old\ with\n
+comment6.params=
+comment6.target=void\ updateText()
+comment6.text=\n\ Update\ the\ text\ the\ scorebar\ is\ displaying\ with\ the\ variables\ regardless\ of\ whether\ or\ not\ the\ variables\ have\ been\ updated,\ just\ for\ safety.\n
+comment7.params=val\ dec\ leng
+comment7.target=java.lang.String\ doubleConvert(double,\ int,\ int)
+comment7.text=\n\ Convert\ a\ double\ to\ a\ string,\ but\ formatted\ with\ the\ number\ of\ decimal\ places\ specified,\ and\ as\ long\ as\ the\ length\ specified.<br\ />\n\ Length\ takes\ precidence\ over\ decimals,\ so\ if\ the\ number\ has\ 15\ places\ before\ the\ decimal\ and\ 4\ after,\ dec\ is\ set\ to\ 4\ and\ leng\ to\ 10,\ the\ string\ will\ only\ have\n\ 10\ digits\ and\ no\ decimals,\ as\ if\ it\ were\ a\ string\ of\ an\ int.\n\ @param\ val\ the\ double\ to\ be\ converted\n\ @param\ dec\ the\ number\ of\ decimal\ places\ to\ truncate\ to\ (no\ rounding)\n\ @param\ leng\ the\ number\ of\ digits\ (the\ .\ is\ not\ a\ digit)\n\ @return\ String\ formatted\ decimal\ as\ a\ String\n
+comment8.params=value\ digits
+comment8.target=java.lang.String\ stringLengthLimiter(java.lang.String,\ int)
+comment8.text=\n\ POWER\ LEVEL\ LIMITER.\ Limit\ the\ length\ of\ a\ string\ starting\ from\ the\ right.\ DOES\ NOT\ ADD\ CHARACTERS.\n\ @params\ value\ starting\ string\n\ @params\ digits\ number\ of\ letters\ to\ keep\n
+comment9.params=value\ digits
+comment9.target=java.lang.String\ zeroAdder(int,\ int)
+comment9.text=\n\ Method\ that\ aids\ in\ the\ appearance\ of\ the\ scoreboard\ by\ generating\n\ Strings\ that\ fill\ in\ zeros\ before\ the\ score.\ For\ example\:\n\ \n\ 27\ \=\=\=>\ to\ 5\ digits\ \=\=\=>\ 00027\n\ \n\ Ripped\ from\ Mr.\ Cohen\n\ @param\ \ \ value\ \ \ integer\ value\ to\ use\ for\ score\ output\n\ @param\ \ \ digits\ \ number\ of\ zeros\ desired\ in\ the\ return\ String\n\ @return\ \ String\ \ built\ score,\ ready\ for\ display\n
+numComments=11

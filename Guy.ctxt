@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Guy
+comment0.text=\n\ Guys\ target\ plants\ and\ eat.\ Each\ bite\ regains\ health\ but\ drains\ energy.\n\ After\ 3\ bites,\ it\ enters\ rageMode\ where\ speed\ and\ eatSpeed\ increases\n\ until\ they\ die.\ \n\ \n\ @Eric\n\ @version\ (0.1)\n
+comment1.params=
+comment1.target=Guy()
+comment1.text=\n\ Default\ constructor\ for\ Guy\ and\ called\ by\ default.\ Randomly\ generates\n\ stats\ for\ guy.\n
+comment2.params=maxH\ maxE\ armor\ speed
+comment2.target=Guy(double,\ double,\ double,\ double)
+comment2.text=\n\ More\ specific\ constructor\ for\ Guys\ that\ allows\ for\ custom\ health,\n\ energy,\ armor\ and\ movespeed.\n\ \n\ @param\ maxH\ \ \ \ \ \ Max\ health\n\ @param\ maxE\ \ \ \ \ \ Max\ energy\n\ @param\ armor\ \ \ \ \ Armor\n\ @param\ speed\ \ \ \ \ Move\ speed\ of\ Guy\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\n\ Act\ -\ do\ whatever\ the\ Guy\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment4.params=
+comment4.target=void\ activateRage()
+numComments=5

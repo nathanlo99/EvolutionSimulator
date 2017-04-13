@@ -6,7 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  *  
  * Nathan:
  *  - Basically did the whole thing, though Eric helped iron out some bugs
- *      with the animals constantly reproducing and eating too quickly
+ *      with the animals constantly reproducing and eating too quickly.
+ * Eric:
+ *  - Added fix to where animals would move around the plant while eating.
  *      
  * @author Nathan Lo
  * @version 0.1

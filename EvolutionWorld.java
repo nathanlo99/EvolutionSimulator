@@ -12,7 +12,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Nathan Lo:
  *  - Changed the random spawning 
  * Eric Sun:
- *  - asdflkjasfsadk
+ *  - Graphics of peashooter, animal and background.
  * @version Apr 2017
  */
 public class EvolutionWorld extends World
