@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class EvolutionWorld here.
  * 
- * @author Jerry Liu
+ * @author Jerry Liu, Joey Ma, Nathan Lo, Eric Sun
  * 
  * Jerry Liu:
  *  - Random spawn thing
@@ -56,7 +56,7 @@ public class EvolutionWorld extends World
     }
 
     public void killAnimal(Animal a) {
-        animals=Math.max(0,animals-1);
+        animals = Math.max(0, animals - 1);
         removeObject(a);
     }
 
@@ -68,8 +68,8 @@ public class EvolutionWorld extends World
 
     public void spawnRandomSpot(Actor a){
         int x = getWidth();
-        int y = getHeight()-40;
-        addObject(a,Greenfoot.getRandomNumber(x),Greenfoot.getRandomNumber(y)+40);
+        int y = getHeight() - 40;
+        addObject(a, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y) + 40);
     }
 
     /**
@@ -77,42 +77,42 @@ public class EvolutionWorld extends World
      */
 
     public void spawnRandom(){
-        for (int i = 0;i<Greenfoot.getRandomNumber(10)+5;i++){
+        for (int i = 0; i < Greenfoot.getRandomNumber(10) + 5; i++) {
             int plantType = Greenfoot.getRandomNumber(4);
-            if(plantType==0)spawnRandomSpot(new StabPlant());
-            else if(plantType==1)spawnRandomSpot(new PoisonPlant());
-            else if(plantType==2)spawnRandomSpot(new ThornPlant());
-            else if(plantType==3)spawnRandomSpot(new ShooterPlant());
+            if (plantType == 0) spawnRandomSpot(new StabPlant());
+            else if (plantType == 1) spawnRandomSpot(new PoisonPlant());
+            else if (plantType == 2) spawnRandomSpot(new ThornPlant());
+            else if (plantType == 3) spawnRandomSpot(new ShooterPlant());
             plants++;
         }
-        for (int i = 0;i<Greenfoot.getRandomNumber(5)+2;i++){
+        for (int i = 0; i < Greenfoot.getRandomNumber(5) + 2; i++) {
             int animalType = Greenfoot.getRandomNumber(2);
-            if(animalType==0)spawnRandomSpot(new Guy());
-            else if(animalType==1)spawnRandomSpot(new Girl());
+            if(animalType == 0) spawnRandomSpot(new Guy());
+            else if(animalType == 1) spawnRandomSpot(new Girl());
             animals++;
         }
-        score.update(0,animals);
-        score.update(1,plants);
+        score.update(0, animals);
+        score.update(1, plants);
     }
-    
-    public void act(){
-        score.update(0,animals);
-        score.update(1,plants);
+
+    public void act() {
+        score.update(0, animals);
+        score.update(1, plants);
         score.updateText();
         if (animals == 0 || plants == 0) {
             spawnRandom();
         }
     }
 
-    public void newAnimal(){
+    public void newAnimal() {
         animals++;
     }
 
-    public void newPlant(){
+    public void newPlant() {
         plants++;
     }
 
-    public void killPlant(){
+    public void killPlant() {
         plants--;
         if (plants < 0) System.err.println("Hm weird...");
     }
