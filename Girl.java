@@ -2,7 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 
 /**
- * Write a description of class Girl here.
+ * Girls target Guy's when they have enough health and energy,
+ *  and try to eat plants when they don't. When there's nothing
+ *  left to do, they spin in circles
  * 
  * @author Nathan Lo
  * @version 0.1
@@ -16,7 +18,7 @@ public class Girl extends Animal
     public static final int MIN_HEALTH = 700, MAX_HEALTH = 1000;
     public static final int MIN_ENERGY = 400, MAX_ENERGY = 600;
     public static final int MIN_ARMOR = 0, MAX_ARMOR = 10;
-    public static final int MIN_SPEED = 1, MAX_SPEED = 5;
+    public static final int MIN_SPEED = 2, MAX_SPEED = 5;
 
     /**
      * Random constructor for Girls, call this in default

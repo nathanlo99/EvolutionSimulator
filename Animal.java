@@ -1,8 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Animal here.
- * 
+ * An Animal who eats plants, and reproduces, passing on most of their traits 
+ *  to their offspring. Includes a visual health bar and energy bar.
+ *  
+ * Nathan:
+ *  - Basically did the whole thing, though Eric helped iron out some bugs
+ *      with the animals constantly reproducing and eating too quickly
+ *      
  * @author Nathan Lo
  * @version 0.1
  */
