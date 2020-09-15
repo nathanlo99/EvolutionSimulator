@@ -17,9 +17,9 @@ public class ScoreBar extends Actor
     /**Mr. Cohen stuff*/
     // Declare Objects
     private GreenfootImage scoreBoard;
-    private Color background;
-    private Color foreground;
-    private Font textFont;
+    private greenfoot.Color background;
+    private greenfoot.Color foreground;
+    private greenfoot.Font textFont;
     private String text;
 
     // Declare Variables:
@@ -38,7 +38,7 @@ public class ScoreBar extends Actor
      * @see format
      */
     public ScoreBar(int width, String format){
-        this(width,format,Color.WHITE,new Color(175, 20, 23));
+        this(width,format,greenfoot.Color.WHITE,new greenfoot.Color(175, 20, 23));
     }
 
     /**
@@ -50,7 +50,7 @@ public class ScoreBar extends Actor
      * @param bg color of the background
      * @see format
      */
-    public ScoreBar(int width, String format, Color text, Color bg){
+    public ScoreBar(int width, String format, greenfoot.Color text, greenfoot.Color bg){
         array = new WeirdArray();
         this.width=width;
         if(width!=0){
@@ -62,7 +62,7 @@ public class ScoreBar extends Actor
         }
         background = bg;
         foreground = text;
-        textFont = new Font("Courier", Font.BOLD, 24);
+        textFont = new greenfoot.Font("Courier", true, false, 24);
         textFormat=format;
     }
 
